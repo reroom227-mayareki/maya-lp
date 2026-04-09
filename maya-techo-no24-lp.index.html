@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マヤ暦手帳 No.24 のご案内 | りぃ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --cream: #FAF6EE;
+    --ivory: #F5F0E8;
+    --brown: #5C3D2E;
+    --brown-light: #8A6552;
+    --text: #2C2416;
+    --text-light: #6B5744;
+    --accent: #B5474E;
+    --green: #4A6741;
+    --cherry: #D4475A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #2C1A0E 0%, #5C3D2E 40%, #8A6552 70%, #C9A84C 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+
+  .hero-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    color: rgba(232,201,122,0.8);
+    letter-spacing: 0.3em;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title span {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero-img-placeholder {
+    width: min(320px, 80vw);
+    height: 220px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.3), rgba(255,255,255,0.1));
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.55s forwards;
+  }
+
+  .hero-img-placeholder span {
+    color: rgba(201,168,76,0.6);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-cta {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.65s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.5);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.4);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    animation: bounce 2s infinite;
+  }
+
+  /* ── Sections ── */
+  section {
+    padding: 80px 24px;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  /* ── Section 1: ターゲット ── */
+  .target-section {
+    background: var(--cream);
+  }
+
+  .catch-callout {
+    background: linear-gradient(135deg, #FFF8EC, var(--ivory));
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 40px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .catch-callout em {
+    color: var(--cherry);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 600px) {
+    .target-grid { grid-template-columns: 1fr; }
+  }
+
+  .target-item {
+    background: #fff;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: border-color 0.3s;
+  }
+
+  .target-item:hover { border-color: var(--gold); }
+
+  .target-item::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .story-block {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .story-block { grid-template-columns: 1fr; }
+  }
+
+  .story-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #EDE0CC, #D4C5AA);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown-light);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  .story-text {
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--text-light);
+  }
+
+  .story-text strong { color: var(--text); font-weight: 500; }
+  .story-text .highlight { color: var(--cherry); font-weight: 500; }
+
+  /* ── Section 2: 手帳の中身 ── */
+  .notebook-section {
+    background: var(--ivory);
+  }
+
+  .size-note {
+    background: #fff3f3;
+    border: 1px solid rgba(180,71,78,0.2);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+
+  .size-cards {
+    display: grid;
+    gap: 24px;
+  }
+
+  .size-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(92,61,46,0.08);
+  }
+
+  .size-card-header {
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .size-card-header.pink  { background: linear-gradient(90deg, #FFF0F3, #FFE4EA); }
+  .size-card-header.orange { background: linear-gradient(90deg, #FFF5EC, #FFE8D6); }
+
+  .size-card-header h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .size-card-header.pink  h3 { color: #C0394A; }
+  .size-card-header.orange h3 { color: #B35C20; }
+
+  .price-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .price-tag.pink { color: #C0394A; }
+  .price-tag.orange { color: #B35C20; }
+
+  .size-card-body {
+    padding: 20px 24px;
+  }
+
+  .recommend-box {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .recommend-box strong { color: var(--brown); font-size: 0.9rem; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 560px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feature-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #EDE0CC, #D4C5AA);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--brown-light);
+  }
+
+  .feature-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .feature-label.pink  { color: #C0394A; }
+  .feature-label.orange { color: #B35C20; }
+
+  .common-box {
+    background: linear-gradient(135deg, #F5F0E8, #EDE0CC);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 0.88rem;
+  }
+
+  .common-box strong {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom: 8px;
+    color: var(--brown);
+  }
+
+  .common-box ul { padding-left: 20px; }
+  .common-box li { margin-bottom: 4px; }
+
+  /* ── CTA Block ── */
+  .cta-block {
+    background: linear-gradient(135deg, #1A0E06, #3D2414);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    margin: 32px 0;
+  }
+
+  .cta-block p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  /* ── Section 3: グッズ ── */
+  .goods-section { background: var(--cream); }
+
+  .goods-note {
+    background: linear-gradient(135deg, #F0FAF0, #E0F0E0);
+    border: 1px solid rgba(74,103,65,0.2);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 0.88rem;
+    margin-top: 24px;
+  }
+
+  .goods-note strong { color: var(--green); }
+
+  /* ── Section 4: Q&A ── */
+  .qa-section { background: var(--ivory); }
+
+  .qa-list { display: flex; flex-direction: column; gap: 12px; }
+
+  details {
+    background: #fff;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  details[open] { border-color: var(--gold); }
+
+  summary {
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.92rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  summary::before {
+    content: 'Q';
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    flex-shrink: 0;
+  }
+
+  summary::after {
+    content: '＋';
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 1rem;
+    transition: transform 0.3s;
+  }
+
+  details[open] summary::after { transform: rotate(45deg); }
+
+  .qa-answer {
+    padding: 0 20px 18px 20px;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding-top: 14px;
+    line-height: 1.9;
+  }
+
+  .qa-answer a { color: var(--green); }
+
+  /* ── Section 5: りぃより ── */
+  .profile-section {
+    background: linear-gradient(160deg, #2C1A0E, #5C3D2E);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .profile-section .section-title {
+    color: var(--gold-light);
+    border-color: rgba(201,168,76,0.3);
+  }
+
+  .profile-block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  @media (max-width: 580px) {
+    .profile-block { grid-template-columns: 1fr; }
+  }
+
+  .profile-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    border: 2px solid rgba(201,168,76,0.4);
+  }
+
+  .profile-meta {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .profile-text {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .profile-text .gold { color: var(--gold-light); }
+
+  .line-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #06C755;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    transition: all 0.3s;
+  }
+
+  .line-cta:hover { background: #05b34c; transform: translateY(-1px); }
+
+  /* ── Footer ── */
+  footer {
+    background: #1A0E06;
+    text-align: center;
+    padding: 32px 24px;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── Floating CTA ── */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .floating-cta.visible { opacity: 1; }
+
+  .floating-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+  }
+
+  .floating-btn:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="hero-badge">🍒 りぃ × マヤ暦</p>
+  <p class="hero-eyebrow">MAYA TECHO No.24</p>
+  <h1 class="hero-title">
+    マヤ暦手帳<span>No.24</span><br>のご案内
+  </h1>
+  <p class="hero-sub">
+    自然のリズムに乗る、<br>豊かで優雅なゆとりある暮らしへ
+  </p>
+  <div class="hero-img-placeholder">
+    <span>✦ 手帳No.24 メイン画像 ✦</span>
+  </div>
+  <div class="hero-cta">
+    <a href="https://ws.formzu.net/fgen/S87847728/" class="btn-primary">⭐️ お申込みはこちら ⭐️</a>
+  </div>
+  <div class="scroll-hint">▼ scroll</div>
+</section>
+
+<!-- ── 目次 ── -->
+<nav style="background:#fff; border-bottom:1px solid rgba(201,168,76,0.2); padding:16px 24px; position:sticky; top:0; z-index:50;">
+  <div style="max-width:860px; margin:0 auto; display:flex; gap:24px; overflow-x:auto; white-space:nowrap; font-size:0.82rem;">
+    <a href="#target"   style="color:var(--brown-light); text-decoration:none;">① 向いてる方</a>
+    <a href="#notebook" style="color:var(--brown-light); text-decoration:none;">② 手帳の中身</a>
+    <a href="#goods"    style="color:var(--brown-light); text-decoration:none;">③ グッズ</a>
+    <a href="#qa"       style="color:var(--brown-light); text-decoration:none;">④ Q&amp;A</a>
+    <a href="#profile"  style="color:var(--brown-light); text-decoration:none;">⑤ りぃより</a>
+  </div>
+</nav>
+
+<!-- ── 1. ターゲット ── -->
+<section class="target-section" id="target">
+  <div class="container">
+    <p class="section-label">01 — For You</p>
+    <h2 class="section-title">マヤ暦手帳って<br>どんな人に向いているの？</h2>
+
+    <div class="catch-callout">
+      時間に追われる生活から、<em>豊かで優雅なゆとりある暮らし</em>へ
+    </div>
+
+    <div class="target-grid">
+      <div class="target-item">時間に追われた生活から脱したい方</div>
+      <div class="target-item">自分と向き合う時間を確保したい方</div>
+      <div class="target-item">誰かのためではなく自分のための人生を歩みたい方</div>
+      <div class="target-item">自分の使命や方向性と向き合いたい方</div>
+      <div class="target-item">自然のリズムで生活を送りたい方</div>
+      <div class="target-item">今よりもっと豊かで優雅な暮らしを送りたい方</div>
+      <div class="target-item">マヤ暦に興味のある方</div>
+      <div class="target-item">日常にマヤ暦を取り入れたい方</div>
+    </div>
+
+    <div class="story-block">
+      <div class="story-img">✦ 手帳イメージ画像 ✦</div>
+      <div class="story-text">
+        毎日アレもしなきゃ、ここにも行かなきゃ…と<strong>時間に追われた生活をしていませんか？</strong><br><br>
+        実はそんな風に時間に追われるのは、12ヶ月のカレンダーや24時間の時計時間の中で生活しているからかもしれません。<br><br>
+        一方、マヤ文明時代の暦は<strong>自然界のリズム</strong>そのもの。
+        この自然界のサイクルを現代の生活にほんの少し取り入れるだけで、<br>
+        <span class="highlight">「どんな流れ（リズム）の中にいるのか？」</span>が見え、<br>
+        <span class="highlight">「どんなエネルギーを活かせばいいのか？」</span>が分かるようになります。<br><br>
+        この手帳はマヤ暦の13日サイクルで構成されているため、<span class="highlight">時間やスケジュールに追われずストレスを激減させ、あなただけの心地良さを感じる</span>仕組みが詰まっています。
+      </div>
+    </div>
+
+    <div class="cta-block" style="margin-top:48px;">
+      <p>気になったらまずはお申込みページへ</p>
+      <a href="https://ws.formzu.net/fgen/S87847728/" class="btn-primary">⭐️ お申込みはこちら ⭐️</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. 手帳の中身 ── -->
+<section class="notebook-section" id="notebook">
+  <div class="container">
+    <p class="section-label">02 — Inside</p>
+    <h2 class="section-title">手帳の中身はどうなってるの？</h2>
+
+    <div class="common-box">
+      <strong>✦ 全サイズ共通の内容</strong>
+      <ul>
+        <li>願いごとを書くページ</li>
+        <li>ふり返りページ</li>
+        <li>オリジナル栞が1枚</li>
+      </ul>
+    </div>
+
+    <div class="size-note">※ 手帳のサイズは全部で３サイズ。詳細は各サイズをご確認ください。</div>
+
+    <div class="size-cards">
+
+      <!-- A5 プレミアム -->
+      <div class="size-card">
+        <div class="size-card-header pink">
+          <h3>🌸 A５サイズ（プレミアム版）</h3>
+          <span class="price-tag pink">¥3,630</span>
+        </div>
+        <div class="size-card-body">
+          <div class="recommend-box">
+            <strong>こんな方におすすめ</strong><br>
+            ・スケジュール管理も内観も1冊でやりたい方<br>
+            ・180度開く製本が便利！という方
+          </div>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-img">画像①<br>180度開く製本</div>
+              <div class="feature-label pink">① パタンと180度開く製本作り</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像②<br>年間カレンダー</div>
+              <div class="feature-label pink">② 年間カレンダーで260日サイクルがわかりやすい</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像③<br>52日間ビュー</div>
+              <div class="feature-label pink">③ マヤ暦の1ヶ月（=52日間）が一目瞭然</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像④<br>次サイクル記入欄</div>
+              <div class="feature-label pink">④ 次の260日サイクルの予定も書き込める</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像⑤<br>タイムスケジュール</div>
+              <div class="feature-label pink">⑤ 毎日のタイムスケジュール管理に</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像⑥<br>ダイアリーページ</div>
+              <div class="feature-label pink">⑥ 毎日自分と向き合えるダイアリーページ</div>
+            </div>
+          </div>
+          <div class="cta-block" style="margin-top:24px;">
+            <a href="https://ws.formzu.net/fgen/S87847728/" class="btn-primary">⭐️ A5版を申し込む ⭐️</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- B5 / B6 -->
+      <div class="size-card">
+        <div class="size-card-header orange">
+          <h3>🍊 B５（ノート版） / B６（通常版）</h3>
+          <div>
+            <span class="price-tag orange" style="font-size:1rem;">B5 ¥3,300 / B6 ¥2,820</span>
+          </div>
+        </div>
+        <div class="size-card-body">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+            <div class="recommend-box">
+              <strong>B6（通常版）はこんな方に</strong><br>
+              ・初めてのマヤ暦手帳に<br>
+              ・持ち歩きたい方<br>
+              ・コンパクト重視の方
+            </div>
+            <div class="recommend-box">
+              <strong>B5（ノート版）はこんな方に</strong><br>
+              ・家でゆっくり書きたい方<br>
+              ・写真を貼ったり絵を描きたい方<br>
+              ・ゆったり文章を書きたい方
+            </div>
+          </div>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-img">画像①<br>13日間ビュー</div>
+              <div class="feature-label orange">① マヤ暦の1週間（=13日）がわかりやすい</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像②<br>260日サイクル</div>
+              <div class="feature-label orange">② 次の260日サイクルの予定も書き込める</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-img">画像③<br>ダイアリー</div>
+              <div class="feature-label orange">③ 毎日自分と向き合えるダイアリーページ</div>
+            </div>
+          </div>
+          <div class="cta-block" style="margin-top:24px;">
+            <a href="https://ws.formzu.net/fgen/S87847728/" class="btn-primary">⭐️ B5・B6版を申し込む ⭐️</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. グッズ ── -->
+<section class="goods-section" id="goods">
+  <div class="container">
+    <p class="section-label">03 — Goods</p>
+    <h2 class="section-title">手帳と一緒に使える<br>カスタマイズグッズ</h2>
+
+    <div style="background:#fff; border:1px solid rgba(201,168,76,0.2); border-radius:12px; padding:28px 24px; text-align:center;">
+      <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:20px;">
+        手帳と合わせてお使いいただけるオリジナルグッズをご用意しています。<br>
+        詳細はお申込みフォームにてご確認ください。
+      </p>
+      <a href="https://ws.formzu.net/fgen/S87847728/" class="btn-primary">⭐️ オリジナルグッズを申し込む ⭐️</a>
+    </div>
+
+    <div class="goods-note">
+      <strong>🍀 手帳をご購入されていない方もお求めになれます</strong><br>
+      ご自分で手帳を手配された方、他のアドバイザーから手帳を購入された方なども上記グッズのみでのご購入が可能です。お気軽にご連絡ください。
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. Q&A ── -->
+<section class="qa-section" id="qa">
+  <div class="container">
+    <p class="section-label">04 — Q&amp;A</p>
+    <h2 class="section-title">よくあるご質問</h2>
+
+    <div class="qa-list">
+      <details>
+        <summary>マヤ暦講座を受けていませんが手帳を購入することはできますか？</summary>
+        <div class="qa-answer">
+          もちろんです。手帳からマヤ暦に触れる方も多くいられます。<br>
+          ただ手帳の中身が一般的な手帳の作りとは異なるため、より使いこなしたい方には「マヤ暦手帳の活用講座」や「オンラインサロン」のご参加もおすすめしています。
+        </div>
+      </details>
+      <details>
+        <summary>どのサイズを購入しようか迷っています。選び方のポイントはありますか？</summary>
+        <div class="qa-answer">
+          <strong>B6</strong>…初めてのマヤ暦手帳！持ち運びしたい！という方に一番小さいサイズを。<br>
+          <strong>B5</strong>…自宅でしっかり日記時間を楽しみたい！という方に一番大きいサイズを。<br>
+          <strong>A5</strong>…スケジュール管理にも使いたい！180度開く手帳が書きやすい！という方に中間サイズを。<br><br>
+          わたし自身はここ数年A5サイズを愛用しています。迷ったら遠慮なく<a href="https://lin.ee/vG58S2G">公式LINE</a>でお問合せください。
+        </div>
+      </details>
+      <details>
+        <summary>りえさんから購入する特典はありますか？</summary>
+        <div class="qa-answer">
+          はい。<strong>オリジナルマヤ暦手帳シール</strong>と<strong>マヤ暦手帳専用ノート</strong>を特典としてご用意しています。<br>
+          いずれもシンクロニシティ公式認定の手帳グッズで、わたしからお申込みいただいた方だけの限定特典です。数に限りがございますのでお早めにどうぞ。
+        </div>
+      </details>
+      <details>
+        <summary>手帳シールやノートを複数枚（冊）購入できますか？</summary>
+        <div class="qa-answer">
+          もちろんです。申込みフォームにご希望の枚数（冊数）をご入力ください。<br>
+          アドバイザーからの申込みも受け付けておりますので、生徒さんへの配布などに活用の際は遠慮なくご連絡ください。<br>
+          <strong>複数枚（冊）購入の際、割引プランをご用意しています。</strong>
+        </div>
+      </details>
+      <details>
+        <summary>手帳の活用講座はいつ頃開催されますか？</summary>
+        <div class="qa-answer">
+          現在、開催時期を調整中です。詳細は公式LINEよりご案内いたしますので、ご登録の上お待ちください。
+        </div>
+      </details>
+      <details>
+        <summary>オンラインサロンの運営予定はありますか？</summary>
+        <div class="qa-answer">
+          はい、りぃマヤサロンを運営しています。詳細は公式LINEよりお知らせしますので、ぜひご登録ください。
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. りぃより ── -->
+<section class="profile-section" id="profile">
+  <div class="container">
+    <p class="section-label" style="color:rgba(201,168,76,0.7);">05 — From Rii</p>
+    <h2 class="section-title">りぃより</h2>
+
+    <div class="profile-block">
+      <div class="profile-img">プロフィール写真</div>
+      <div>
+        <div class="profile-meta">
+          マヤ暦アドバイザー歴 9年　／　マヤ暦手帳歴 16冊目（No.24）
+        </div>
+        <div class="profile-text">
+          マヤ暦手帳を使うことで日々自分との対話を楽しみ、「本当の自分」に向き合ってきました。<br><br>
+          その結果、叶えてきた願いはプライベートから仕事に至るまで金脈アップ・対人運アップ・仕事運アップといくつも叶えてきました。<br><br>
+          豊かで優雅でゆとりを持ったビジネスライフをこれからも実践し続けます。<br><br>
+          <span class="gold">No.24の手帳も、自分の人生を自ら輝かせたい方と一緒に手帳を使っていきたいですね♡</span>
+        </div>
+        <a href="https://lin.ee/vG58S2G" class="line-cta">💬 公式LINEでお問合せ・ご質問</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>© りぃ｜マヤ暦手帳専門家🍒</p>
+</footer>
+
+<!-- ── Floating CTA ── -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://ws.formzu.net/fgen/S87847728/" class="floating-btn">お申込みはこちら ⭐️</a>
+</div>
+
+<script>
+  const cta = document.getElementById('floatingCta');
+  window.addEventListener('scroll', () => {
+    cta.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
